@@ -86,7 +86,10 @@ https://fashion-ecommerce-react-m76l.vercel.app/
 ##CheckOut
 <img width="1873" height="944" alt="image" src="https://github.com/user-attachments/assets/a943f19b-f781-4ed0-88bf-6d324732f4eb" />
 
+
+
 ##Responsive 
+
 <img width="152" height="334" alt="image" src="https://github.com/user-attachments/assets/2671e821-e6f5-41b4-ac84-cb3b7a28892a" />
 
 
