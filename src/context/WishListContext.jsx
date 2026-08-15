@@ -13,9 +13,10 @@ export default function WishListProvider({ children }) {
   useEffect(() => {
     try {
       localStorage.setItem("wishlist", JSON.stringify(wishlist));
-    } catch {
-      console.log("error during saving");
     }
+     catch {
+  console.log("Failed to save wishlist to localStorage");
+  } 
   }, [wishlist]);
 
   const addWishlist = (product) => {

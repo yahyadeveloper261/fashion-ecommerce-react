@@ -16,7 +16,7 @@ export default function CartProvider({ children }) {
     try {
       localStorage.setItem("cart", JSON.stringify(cart));
     } catch {
-      console.log("cant save");
+        console.log("Failed to save cart to localStorage");
     }
   }, [cart]);
   const increment = (index) => {
