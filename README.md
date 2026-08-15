@@ -67,8 +67,14 @@ npm run build
 https://fashion-ecommerce-react-m76l.vercel.app/
 
 ## 📸 Screenshots
+##Home Page
 
-Screenshots can be added here later to showcase the homepage, product listing, product details, cart, and checkout pages.
+<img width="896" height="381" alt="ChatGPT Image Aug 6, 2026, 08_33_00 PM" src="https://github.com/user-attachments/assets/78bfb12e-0fc6-48ea-acec-984a286f5d7e" />
+
+##Category 
+<img width="1682" height="1415" alt="image" src="https://github.com/user-attachments/assets/007a00d1-fb38-44e1-8a05-a5ddeecde359" />
+
+
 
 ## 👨‍💻 Author
 
