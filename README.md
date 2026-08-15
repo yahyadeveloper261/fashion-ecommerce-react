@@ -64,9 +64,7 @@ npm run build
 
 ## 🌐 Live Demo
 
-Add your Vercel deployment link here:
-
-`YOUR-VERCEL-LINK`
+https://fashion-ecommerce-react-m76l.vercel.app/
 
 ## 📸 Screenshots
 
