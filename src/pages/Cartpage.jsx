@@ -2,24 +2,20 @@ import React, { useContext, useState } from "react";
 import { cartContext } from "../context/cartContext";
 import { useNavigate } from "react-router-dom";
 
-export default function Cartpage({dark}) {
+export default function Cartpage({ dark }) {
   const { cart, del, increment, decrement, grandTotal } =
     useContext(cartContext);
 
   const navigate = useNavigate();
 
   return (
-     <div
+    <div
       className={`min-h-screen w-full rounded-2xl ${
-        dark
-          ? "bg-gray-950 text-white"
-          : "bg-white text-gray-900"
+        dark ? "bg-gray-950 text-white" : "bg-white text-gray-900"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 py-6">
-
         {/* Title */}
-      
 
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
@@ -28,11 +24,15 @@ export default function Cartpage({dark}) {
               Shopping Bag
             </p>
 
-            <h1 className={`text-3xl md:text-4xl font-extrabold ${dark?"text-white":"text-gray-800"}`}>
+            <h1
+              className={`text-3xl md:text-4xl font-extrabold ${dark ? "text-white" : "text-gray-800"}`}
+            >
               My Cart
             </h1>
 
-            <p className={`text-gray-500 dark:text-gray-400 mt-1 ${dark?"text-white":"text-gray-800"}`}>
+            <p
+              className={`text-gray-500 dark:text-gray-400 mt-1 ${dark ? "text-white" : "text-gray-800"}`}
+            >
               {cart.length} {cart.length === 1 ? "item" : "items"} in your cart
             </p>
           </div>
@@ -87,13 +87,10 @@ export default function Cartpage({dark}) {
             </p>
           </div>
         ) : (
-
           /* Cart Items */
           <div className="grid lg:grid-cols-3 gap-6">
-
             {/* Products */}
             <div className="lg:col-span-2 space-y-4">
-
               {cart.map((item, index) => (
                 <div
                   key={index}
@@ -113,7 +110,6 @@ export default function Cartpage({dark}) {
                     transition-all duration-300
                   "
                 >
-
                   {/* Product Image */}
                   <div className="relative shrink-0">
                     <img
@@ -149,7 +145,6 @@ export default function Cartpage({dark}) {
 
                   {/* Product Info */}
                   <div className="flex-1 w-full">
-
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <h2 className="font-bold text-lg text-gray-900 dark:text-white">
@@ -178,7 +173,6 @@ export default function Cartpage({dark}) {
 
                     {/* Quantity + Delete */}
                     <div className="flex items-center justify-between mt-5">
-
                       <div
                         className="
                           inline-flex
@@ -280,9 +274,7 @@ export default function Cartpage({dark}) {
 
                 <div className="flex justify-between text-gray-500 dark:text-gray-400 mb-4">
                   <span>Delivery</span>
-                  <span className="font-medium text-green-600">
-                    Free
-                  </span>
+                  <span className="font-medium text-green-600">Free</span>
                 </div>
 
                 <div className="border-t border-dashed border-gray-200 dark:border-gray-700 my-5"></div>
@@ -322,7 +314,6 @@ export default function Cartpage({dark}) {
                 </button>
               </div>
             </div>
-
           </div>
         )}
       </div>

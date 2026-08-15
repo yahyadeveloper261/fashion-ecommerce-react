@@ -11,14 +11,10 @@ export default function Account({ dark }) {
       }`}
     >
       <div className="max-w-5xl mx-auto">
-
         {/* Heading */}
-        <h1 className="text-3xl font-bold mb-8">
-          My Account
-        </h1>
+        <h1 className="text-3xl font-bold mb-8">My Account</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
           {/* Profile Card */}
           <div
             className={`md:col-span-1 rounded-2xl p-6 shadow ${
@@ -31,17 +27,11 @@ export default function Account({ dark }) {
               </div>
             </div>
 
-            <h2 className="text-xl font-bold text-center">
-              Muhammad Yahya
-            </h2>
+            <h2 className="text-xl font-bold text-center">Muhammad Yahya</h2>
 
-            <p className="text-gray-500 text-center mt-1">
-              yahya@example.com
-            </p>
+            <p className="text-gray-500 text-center mt-1">yahya@example.com</p>
 
-            <button
-              className="w-full mt-6 bg-black text-white py-3 rounded-xl hover:bg-gray-800"
-            >
+            <button className="w-full mt-6 bg-black text-white py-3 rounded-xl hover:bg-gray-800">
               Edit Profile
             </button>
           </div>
@@ -52,12 +42,9 @@ export default function Account({ dark }) {
               dark ? "bg-gray-900" : "bg-white"
             }`}
           >
-            <h2 className="text-xl font-bold mb-5">
-              Account
-            </h2>
+            <h2 className="text-xl font-bold mb-5">Account</h2>
 
             <div className="space-y-3">
-
               {/* Orders */}
               <button
                 onClick={() => navigate("/orders")}
@@ -71,9 +58,7 @@ export default function Account({ dark }) {
                   <span className="text-2xl">📦</span>
                   <div className="text-left">
                     <h3 className="font-semibold">My Orders</h3>
-                    <p className="text-sm text-gray-500">
-                      View your orders
-                    </p>
+                    <p className="text-sm text-gray-500">View your orders</p>
                   </div>
                 </div>
 
@@ -93,9 +78,7 @@ export default function Account({ dark }) {
                   <span className="text-2xl">❤️</span>
                   <div className="text-left">
                     <h3 className="font-semibold">Wishlist</h3>
-                    <p className="text-sm text-gray-500">
-                      Your saved products
-                    </p>
+                    <p className="text-sm text-gray-500">Your saved products</p>
                   </div>
                 </div>
 
@@ -135,21 +118,16 @@ export default function Account({ dark }) {
                   <span className="text-2xl">⚙️</span>
                   <div className="text-left">
                     <h3 className="font-semibold">Settings</h3>
-                    <p className="text-sm text-gray-500">
-                      Account preferences
-                    </p>
+                    <p className="text-sm text-gray-500">Account preferences</p>
                   </div>
                 </div>
 
                 <span>→</span>
               </button>
-
             </div>
 
             {/* Logout */}
-            <button
-              className="w-full mt-6 border border-red-500 text-red-500 py-3 rounded-xl hover:bg-red-500 hover:text-white transition"
-            >
+            <button className="w-full mt-6 border border-red-500 text-red-500 py-3 rounded-xl hover:bg-red-500 hover:text-white transition">
               Logout
             </button>
           </div>

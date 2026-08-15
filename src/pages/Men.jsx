@@ -9,23 +9,19 @@ export default function Men({ dark }) {
   const { subCategory } = useParams();
   const navigate = useNavigate();
   const [sortBy, setSortBy] = useState("");
- const [currentPage,setCurrentPage]=useState(1)
-  const productsPerPage=8;
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 8;
 
   const filterSearch = products.filter((item) =>
-    item.name.toLowerCase().includes(search.toLowerCase())
+    item.name.toLowerCase().includes(search.toLowerCase()),
   );
 
-  const menProducts = filterSearch.filter(
-    (item) => item.category === "Men"
-  );
+  const menProducts = filterSearch.filter((item) => item.category === "Men");
 
   const filterProducts = !subCategory
     ? menProducts
     : menProducts.filter(
-        (item) =>
-          item.subCategory?.toLowerCase() ===
-          subCategory.toLowerCase()
+        (item) => item.subCategory?.toLowerCase() === subCategory.toLowerCase(),
       );
 
   const sortedBy =
@@ -35,26 +31,23 @@ export default function Men({ dark }) {
           sortBy === "low"
             ? a.price - b.price
             : sortBy === "high"
-            ? b.price - a.price
-            : sortBy === "a-z"
-            ? a.name.localeCompare(b.name)
-            : b.name.localeCompare(a.name)
+              ? b.price - a.price
+              : sortBy === "a-z"
+                ? a.name.localeCompare(b.name)
+                : b.name.localeCompare(a.name),
         );
-        const totalPages = Math.ceil(sortedBy.length / productsPerPage);
-const startIndex = (currentPage - 1) * productsPerPage;
-const endIndex = startIndex + productsPerPage;
-const currentProducts = sortedBy.slice(startIndex, endIndex);
+  const totalPages = Math.ceil(sortedBy.length / productsPerPage);
+  const startIndex = (currentPage - 1) * productsPerPage;
+  const endIndex = startIndex + productsPerPage;
+  const currentProducts = sortedBy.slice(startIndex, endIndex);
 
   return (
     <div
       className={`min-h-screen w-full rounded-2xl ${
-        dark
-          ? "bg-gray-950 text-white"
-          : "bg-white text-gray-900"
+        dark ? "bg-gray-950 text-white" : "bg-white text-gray-900"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 py-6">
-
         {/* Title */}
         <h1
           className={`text-3xl font-bold mb-1 ${
@@ -92,7 +85,6 @@ const currentProducts = sortedBy.slice(startIndex, endIndex);
               dark ? "bg-gray-900" : "bg-gray-100"
             }`}
           >
-
             {/* All */}
             <button
               onClick={() => navigate("/men")}
@@ -100,8 +92,8 @@ const currentProducts = sortedBy.slice(startIndex, endIndex);
                 !subCategory
                   ? "bg-blue-500  text-white"
                   : dark
-                  ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
             >
               All
@@ -114,8 +106,8 @@ const currentProducts = sortedBy.slice(startIndex, endIndex);
                 subCategory === "t-shirts"
                   ? "bg-blue-500  text-white"
                   : dark
-                  ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
             >
               T-Shirts
@@ -126,10 +118,10 @@ const currentProducts = sortedBy.slice(startIndex, endIndex);
               onClick={() => navigate("/men/shirts")}
               className={`shrink-0 px-4 py-2 rounded-full ${
                 subCategory === "shirts"
-                  ?"bg-blue-500  text-white"
+                  ? "bg-blue-500  text-white"
                   : dark
-                  ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
             >
               Shirts
@@ -142,8 +134,8 @@ const currentProducts = sortedBy.slice(startIndex, endIndex);
                 subCategory === "jeans"
                   ? "bg-blue-500  text-white"
                   : dark
-                  ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
             >
               Jeans
@@ -156,8 +148,8 @@ const currentProducts = sortedBy.slice(startIndex, endIndex);
                 subCategory === "trousers"
                   ? "bg-blue-500  text-white"
                   : dark
-                  ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
             >
               Trousers
@@ -170,8 +162,8 @@ const currentProducts = sortedBy.slice(startIndex, endIndex);
                 subCategory === "hoodies"
                   ? "bg-blue-500  text-white"
                   : dark
-                  ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
             >
               Hoodies
@@ -184,8 +176,8 @@ const currentProducts = sortedBy.slice(startIndex, endIndex);
                 subCategory === "jackets"
                   ? "bg-blue-500  text-white"
                   : dark
-                  ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
             >
               Jackets
@@ -198,13 +190,12 @@ const currentProducts = sortedBy.slice(startIndex, endIndex);
                 subCategory === "blazers"
                   ? "bg-blue-500  text-white"
                   : dark
-                  ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
             >
               Blazers
             </button>
-
           </div>
         </div>
 
@@ -230,41 +221,38 @@ const currentProducts = sortedBy.slice(startIndex, endIndex);
         )}
 
         {/* Category Empty */}
-        {filterProducts.length === 0 &&
-          filterSearch.length !== 0 && (
-            <div className="flex justify-center items-center py-16 px-4">
-              <div className="text-center animate-pulse">
-
-                <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-pink-100 text-pink-600 shadow-lg shadow-pink-200/50">
-                  <span className="text-2xl">🛍️</span>
-                </div>
-
-                <h2
-                  className={`text-xl md:text-2xl font-semibold ${
-                    dark ? "text-gray-100" : "text-gray-800"
-                  }`}
-                >
-                  No {subCategory || "Men Products"} Available
-                </h2>
-
-                <p
-                  className={`mt-2 text-sm md:text-base ${
-                    dark ? "text-gray-400" : "text-gray-500"
-                  }`}
-                >
-                  We couldn't find any products in this category at the moment.
-                </p>
-
-                <button
-                  onClick={() => navigate("/men")}
-                  className="mt-6 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 px-6 py-2.5 text-sm font-medium text-white shadow-lg shadow-pink-300/40 transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:from-pink-600 hover:to-rose-600 active:scale-95"
-                >
-                  View All Products
-                </button>
-
+        {filterProducts.length === 0 && filterSearch.length !== 0 && (
+          <div className="flex justify-center items-center py-16 px-4">
+            <div className="text-center animate-pulse">
+              <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-pink-100 text-pink-600 shadow-lg shadow-pink-200/50">
+                <span className="text-2xl">🛍️</span>
               </div>
+
+              <h2
+                className={`text-xl md:text-2xl font-semibold ${
+                  dark ? "text-gray-100" : "text-gray-800"
+                }`}
+              >
+                No {subCategory || "Men Products"} Available
+              </h2>
+
+              <p
+                className={`mt-2 text-sm md:text-base ${
+                  dark ? "text-gray-400" : "text-gray-500"
+                }`}
+              >
+                We couldn't find any products in this category at the moment.
+              </p>
+
+              <button
+                onClick={() => navigate("/men")}
+                className="mt-6 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 px-6 py-2.5 text-sm font-medium text-white shadow-lg shadow-pink-300/40 transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:from-pink-600 hover:to-rose-600 active:scale-95"
+              >
+                View All Products
+              </button>
             </div>
-          )}
+          </div>
+        )}
 
         {/* Products */}
         {filterProducts.length > 0 && (
@@ -279,28 +267,24 @@ const currentProducts = sortedBy.slice(startIndex, endIndex);
             "
           >
             {currentProducts.map((item) => (
-              <ProductCard
-                key={item.id}
-                product={item}
-              />
+              <ProductCard key={item.id} product={item} />
             ))}
           </div>
         )}
-
-     
       </div>
-          {totalPages>1 &&  (<> <Pagination currentPage={currentPage} 
-      setCurrentPage={setCurrentPage} 
-      totalPages={totalPages}/> 
-      <p className="text-sm text-gray-500 text-center pb-5 pt-3">
-          Page {currentPage} of {totalPages}
-        </p>
+      {totalPages > 1 && (
+        <>
+          {" "}
+          <Pagination
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            totalPages={totalPages}
+          />
+          <p className="text-sm text-gray-500 text-center pb-5 pt-3">
+            Page {currentPage} of {totalPages}
+          </p>
         </>
       )}
-      
-        
-
-
     </div>
   );
 }

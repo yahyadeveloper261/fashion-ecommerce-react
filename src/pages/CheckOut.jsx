@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";;
+import { useContext } from "react";
 import { cartContext } from "../context/cartContext";
 
 export default function CheckOut({ dark }) {
@@ -10,21 +10,20 @@ export default function CheckOut({ dark }) {
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
 
-  const {cart, setCart } = useContext(cartContext);
+  const { cart, setCart } = useContext(cartContext);
 
   const placeOrder = () => {
     if (!name.trim() || !mobile.trim() || !address.trim()) {
       alert("Plz fill all fields");
       return;
     }
-    const oldOrders=JSON.parse(localStorage.getItem("orders"))||[];
-const newOrder={
-  id:Date.now(),
-  items:cart,
-  status:"pending",
- 
-}
- localStorage.setItem("orders",JSON.stringify([...oldOrders,newOrder])) 
+    const oldOrders = JSON.parse(localStorage.getItem("orders")) || [];
+    const newOrder = {
+      id: Date.now(),
+      items: cart,
+      status: "pending",
+    };
+    localStorage.setItem("orders", JSON.stringify([...oldOrders, newOrder]));
 
     navigate("/orderSuccess");
     setCart([]);
@@ -35,15 +34,11 @@ const newOrder={
       className={`min-h-screen flex items-center justify-center px-4 py-10 rounded-2xl
       ${dark ? "bg-gray-950" : "bg-gray-100"}`}
     >
-
       <div
         className={`w-full max-w-md p-6 rounded-2xl shadow-lg
         ${dark ? "bg-gray-800 text-white" : "bg-white text-gray-900"}`}
       >
-
-        <h1 className="text-2xl font-bold text-center mb-6">
-          Checkout
-        </h1>
+        <h1 className="text-2xl font-bold text-center mb-6">Checkout</h1>
 
         <form
           onSubmit={(e) => {
@@ -52,7 +47,6 @@ const newOrder={
           }}
           className="space-y-4"
         >
-
           <input
             type="text"
             value={name}
@@ -102,7 +96,6 @@ const newOrder={
           >
             Place Order
           </button>
-
         </form>
       </div>
     </div>

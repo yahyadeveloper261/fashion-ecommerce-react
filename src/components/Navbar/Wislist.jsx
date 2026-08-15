@@ -24,7 +24,6 @@ export default function Wislist() {
     >
       {/* Heart + Count */}
       <div className="relative">
-
         <HiHeart
           className="
             w-5 h-5
@@ -56,12 +55,9 @@ export default function Wislist() {
             {wishlist.length}
           </span>
         )}
-
       </div>
 
-      <span className="text-[9px] sm:text-xs md:text-sm mt-1">
-        Wishlist
-      </span>
+      <span className="text-[9px] sm:text-xs md:text-sm mt-1">Wishlist</span>
     </div>
   );
 }

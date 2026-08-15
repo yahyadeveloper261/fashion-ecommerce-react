@@ -10,19 +10,14 @@ export default function ProductDetail({ dark }) {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const productDetail = products.find(
-    (item) => item.id === Number(id)
-  );
-const col = productDetail.colors?.find(
-  (color) => color === selC
-);
+  const productDetail = products.find((item) => item.id === Number(id));
+  const col = productDetail.colors?.find((color) => color === selC);
   return (
     <div
       className={`min-h-screen px-3 py-3 transition-colors duration-300 rounded-2xl ${
         dark ? "bg-gray-950 text-white" : "bg-gray-50 text-gray-900"
       }`}
     >
-
       {/* Back Button */}
       <button
         onClick={() => navigate(-1)}
@@ -36,9 +31,7 @@ const col = productDetail.colors?.find(
           rounded-md
           hover:bg-pink-600
           transition
-          text-xs ${dark?"bg-white text-gray-700":"bg-gray-700 text-white"}`}
-        
-        
+          text-xs ${dark ? "bg-white text-gray-700" : "bg-gray-700 text-white"}`}
       >
         ← Back
       </button>
@@ -55,14 +48,9 @@ const col = productDetail.colors?.find(
           grid
           md:grid-cols-2
           gap-4
-          ${
-            dark
-              ? "bg-gray-900 border border-gray-800"
-              : "bg-white"
-          }
+          ${dark ? "bg-gray-900 border border-gray-800" : "bg-white"}
         `}
       >
-
         {/* Image */}
         <div
           className={`overflow-hidden rounded-lg ${
@@ -70,10 +58,10 @@ const col = productDetail.colors?.find(
           }`}
         >
           <img
-  src={col?.image || productDetail.image}
-  alt={col?.name || productDetail.name}
-  loading="lazy"
-  className="
+            src={col?.image || productDetail.image}
+            alt={col?.name || productDetail.name}
+            loading="lazy"
+            className="
     w-full
     h-[220px]
     md:h-[300px]
@@ -81,12 +69,11 @@ const col = productDetail.colors?.find(
     hover:scale-105
     transition
   "
-/>
+          />
         </div>
 
         {/* Content */}
         <div className="flex flex-col justify-center">
-
           <span
             className="
               w-fit
@@ -136,9 +123,7 @@ const col = productDetail.colors?.find(
             >
               Color:
               <span
-                className={`ml-1 ${
-                  dark ? "text-gray-400" : "text-gray-500"
-                }`}
+                className={`ml-1 ${dark ? "text-gray-400" : "text-gray-500"}`}
               >
                 {selC}
               </span>
@@ -146,7 +131,6 @@ const col = productDetail.colors?.find(
 
             {productDetail.colors?.length > 0 && (
               <div className="flex gap-3 mt-4">
-
                 {productDetail.colors.map((color) => (
                   <button
                     key={color}
@@ -156,31 +140,25 @@ const col = productDetail.colors?.find(
                         ? "border-black ring-2 ring-pink-200"
                         : "border-gray-300"
                     }`}
-                    style={{ backgroundColor: color}}
+                    style={{ backgroundColor: color }}
                     aria-label={color}
                   />
                 ))}
-
               </div>
             )}
           </div>
 
           <div className="flex items-center gap-1 mt-1">
-            <span className="text-yellow-500 text-xs">
-              ★★★★★
-            </span>
+            <span className="text-yellow-500 text-xs">★★★★★</span>
 
             <span
-              className={`text-xs ${
-                dark ? "text-gray-400" : "text-gray-500"
-              }`}
+              className={`text-xs ${dark ? "text-gray-400" : "text-gray-500"}`}
             >
               ({productDetail.rating})
             </span>
           </div>
 
           <div className="mt-2">
-
             {productDetail.discount > 0 && (
               <p className="text-gray-400 line-through text-xs">
                 Rs {productDetail.price}
@@ -207,7 +185,6 @@ const col = productDetail.colors?.find(
                 {productDetail.discount}% OFF
               </span>
             )}
-
           </div>
 
           <p
@@ -229,13 +206,11 @@ const col = productDetail.colors?.find(
               font-semibold
               hover:bg-pink-600
               transition
-          ${dark?"bg-white text-gray-700":"bg-gray-700 text-white"}`}
+          ${dark ? "bg-white text-gray-700" : "bg-gray-700 text-white"}`}
           >
             Add To Cart
           </button>
-
         </div>
-
       </div>
     </div>
   );

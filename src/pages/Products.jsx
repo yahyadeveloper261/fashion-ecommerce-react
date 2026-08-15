@@ -6,12 +6,11 @@ import Pagination from "../components/Pagination";
 export default function Products({ dark }) {
   const { search } = useContext(SearchContext);
   const [sortPrice, setSortPrice] = useState("");
-const [currentPage, setCurrentPage] = useState(1);
-const productsPerPage = 8;
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 8;
   const filterProduct = products.filter((item) =>
-    item.name.toLowerCase().includes(search.toLowerCase())
+    item.name.toLowerCase().includes(search.toLowerCase()),
   );
-
 
   const sortedPrice =
     sortPrice === ""
@@ -20,18 +19,15 @@ const productsPerPage = 8;
           sortPrice === "low"
             ? a.price - b.price
             : sortPrice === "high"
-            ? b.price - a.price
-            : sortPrice === "a-z"
-            ? a.name.localeCompare(b.name)
-            : b.name.localeCompare(a.name)
+              ? b.price - a.price
+              : sortPrice === "a-z"
+                ? a.name.localeCompare(b.name)
+                : b.name.localeCompare(a.name),
         );
-const totalPages = Math.ceil(sortedPrice.length / productsPerPage);
-const startIndex = (currentPage - 1) * productsPerPage;
-const endIndex = startIndex + productsPerPage;
-const currentProducts = sortedPrice.slice(startIndex, endIndex);
-      
-
-      
+  const totalPages = Math.ceil(sortedPrice.length / productsPerPage);
+  const startIndex = (currentPage - 1) * productsPerPage;
+  const endIndex = startIndex + productsPerPage;
+  const currentProducts = sortedPrice.slice(startIndex, endIndex);
 
   return (
     <div
@@ -39,12 +35,8 @@ const currentProducts = sortedPrice.slice(startIndex, endIndex);
         dark ? "bg-gray-950 text-white" : "bg-white text-gray-900"
       }`}
     >
-
       <div className="max-w-7xl mx-auto px-4 py-10">
-
-        <h1 className="text-3xl font-bold mb-8">
-          All Products
-        </h1>
+        <h1 className="text-3xl font-bold mb-8">All Products</h1>
 
         <select
           value={sortPrice}
@@ -96,23 +88,23 @@ const currentProducts = sortedPrice.slice(startIndex, endIndex);
           "
         >
           {currentProducts.map((item) => (
-            <ProductCard
-              key={item.id}
-              product={item}
-            />
+            <ProductCard key={item.id} product={item} />
           ))}
         </div>
-
       </div>
-      {totalPages>1 &&  (<> <Pagination currentPage={currentPage} 
-         setCurrentPage={setCurrentPage} 
-         totalPages={totalPages}/> 
-         <p className="text-sm text-gray-500 text-center pb-5 pt-3">
-             Page {currentPage} of {totalPages}
-           </p>
-           </>
-         )}
-
+      {totalPages > 1 && (
+        <>
+          {" "}
+          <Pagination
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            totalPages={totalPages}
+          />
+          <p className="text-sm text-gray-500 text-center pb-5 pt-3">
+            Page {currentPage} of {totalPages}
+          </p>
+        </>
+      )}
     </div>
   );
 }

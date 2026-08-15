@@ -15,7 +15,6 @@ export default function MobileMenu({ openMenu, setOpenMenu, dark }) {
           }`}
         >
           <div className="flex justify-between items-center mb-8">
-
             <h2
               className={`text-xl font-bold tracking-wide ${
                 dark ? "text-white" : "text-gray-900"
@@ -38,7 +37,6 @@ export default function MobileMenu({ openMenu, setOpenMenu, dark }) {
           </div>
 
           <div className="flex flex-col gap-2">
-
             <NavLink
               to="/"
               onClick={() => setOpenMenu(false)}
@@ -47,8 +45,8 @@ export default function MobileMenu({ openMenu, setOpenMenu, dark }) {
                   isActive
                     ? "bg-indigo-500 text-white"
                     : dark
-                    ? "text-gray-200 hover:bg-gray-800"
-                    : "text-gray-700 hover:bg-gray-100"
+                      ? "text-gray-200 hover:bg-gray-800"
+                      : "text-gray-700 hover:bg-gray-100"
                 }`
               }
             >
@@ -63,8 +61,8 @@ export default function MobileMenu({ openMenu, setOpenMenu, dark }) {
                   isActive
                     ? "bg-indigo-500 text-white"
                     : dark
-                    ? "text-gray-200 hover:bg-gray-800"
-                    : "text-gray-700 hover:bg-gray-100"
+                      ? "text-gray-200 hover:bg-gray-800"
+                      : "text-gray-700 hover:bg-gray-100"
                 }`
               }
             >
@@ -79,8 +77,8 @@ export default function MobileMenu({ openMenu, setOpenMenu, dark }) {
                   isActive
                     ? "bg-indigo-500 text-white"
                     : dark
-                    ? "text-gray-200 hover:bg-gray-800"
-                    : "text-gray-700 hover:bg-gray-100"
+                      ? "text-gray-200 hover:bg-gray-800"
+                      : "text-gray-700 hover:bg-gray-100"
                 }`
               }
             >
@@ -95,8 +93,8 @@ export default function MobileMenu({ openMenu, setOpenMenu, dark }) {
                   isActive
                     ? "bg-indigo-500 text-white"
                     : dark
-                    ? "text-gray-200 hover:bg-gray-800"
-                    : "text-gray-700 hover:bg-gray-100"
+                      ? "text-gray-200 hover:bg-gray-800"
+                      : "text-gray-700 hover:bg-gray-100"
                 }`
               }
             >
@@ -111,8 +109,8 @@ export default function MobileMenu({ openMenu, setOpenMenu, dark }) {
                   isActive
                     ? "bg-indigo-500 text-white"
                     : dark
-                    ? "text-gray-200 hover:bg-gray-800"
-                    : "text-gray-700 hover:bg-gray-100"
+                      ? "text-gray-200 hover:bg-gray-800"
+                      : "text-gray-700 hover:bg-gray-100"
                 }`
               }
             >
@@ -127,8 +125,8 @@ export default function MobileMenu({ openMenu, setOpenMenu, dark }) {
                   isActive
                     ? "bg-indigo-500 text-white"
                     : dark
-                    ? "text-gray-200 hover:bg-gray-800"
-                    : "text-gray-700 hover:bg-gray-100"
+                      ? "text-gray-200 hover:bg-gray-800"
+                      : "text-gray-700 hover:bg-gray-100"
                 }`
               }
             >
@@ -143,8 +141,8 @@ export default function MobileMenu({ openMenu, setOpenMenu, dark }) {
                   isActive
                     ? "bg-indigo-500 text-white"
                     : dark
-                    ? "text-gray-200 hover:bg-gray-800"
-                    : "text-gray-700 hover:bg-gray-100"
+                      ? "text-gray-200 hover:bg-gray-800"
+                      : "text-gray-700 hover:bg-gray-100"
                 }`
               }
             >
@@ -159,8 +157,8 @@ export default function MobileMenu({ openMenu, setOpenMenu, dark }) {
                   isActive
                     ? "bg-indigo-500 text-white"
                     : dark
-                    ? "text-gray-200 hover:bg-gray-800"
-                    : "text-gray-700 hover:bg-gray-100"
+                      ? "text-gray-200 hover:bg-gray-800"
+                      : "text-gray-700 hover:bg-gray-100"
                 }`
               }
             >
@@ -175,8 +173,8 @@ export default function MobileMenu({ openMenu, setOpenMenu, dark }) {
                   isActive
                     ? "bg-indigo-500 text-white"
                     : dark
-                    ? "text-gray-200 hover:bg-gray-800"
-                    : "text-gray-700 hover:bg-gray-100"
+                      ? "text-gray-200 hover:bg-gray-800"
+                      : "text-gray-700 hover:bg-gray-100"
                 }`
               }
             >
@@ -191,14 +189,13 @@ export default function MobileMenu({ openMenu, setOpenMenu, dark }) {
                   isActive
                     ? "bg-indigo-500 text-white"
                     : dark
-                    ? "text-gray-200 hover:bg-gray-800"
-                    : "text-gray-700 hover:bg-gray-100"
+                      ? "text-gray-200 hover:bg-gray-800"
+                      : "text-gray-700 hover:bg-gray-100"
                 }`
               }
             >
               Brands
             </NavLink>
-
           </div>
         </div>
       )}

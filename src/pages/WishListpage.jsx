@@ -15,9 +15,7 @@ export default function WishListpage({ dark }) {
       className={`min-h-screen px-4 py-8 rounded-2xl
       ${dark ? "bg-gray-950 text-white" : "bg-gray-100 text-gray-900"}`}
     >
-
       <div className="relative max-w-7xl mx-auto mb-8">
-
         <button
           onClick={() => navigate(-1)}
           className={`absolute left-0 top-1 px-3 py-2 rounded-lg
@@ -30,25 +28,17 @@ export default function WishListpage({ dark }) {
         <h1 className="text-2xl md:text-3xl font-bold text-center">
           My Wishlist ❤️
         </h1>
-
       </div>
 
       {wishlist.length === 0 ? (
         <div className="text-center py-20">
-          <p
-            className={`text-lg ${
-              dark ? "text-gray-400" : "text-gray-500"
-            }`}
-          >
+          <p className={`text-lg ${dark ? "text-gray-400" : "text-gray-500"}`}>
             Your Wishlist is Empty 🤍
           </p>
         </div>
       ) : (
-
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-7xl mx-auto">
-
           {wishlist.map((item) => (
-
             <div
               key={item.id}
               className={`rounded-xl overflow-hidden shadow-md
@@ -56,7 +46,6 @@ export default function WishListpage({ dark }) {
               transition-all duration-300
               ${dark ? "bg-gray-800" : "bg-white"}`}
             >
-
               {/* Image */}
               <img
                 src={item.image}
@@ -66,7 +55,6 @@ export default function WishListpage({ dark }) {
 
               {/* Content */}
               <div className="p-3">
-
                 {/* Category */}
                 <span
                   className={`text-[10px] px-2 py-1 rounded-full
@@ -100,8 +88,7 @@ export default function WishListpage({ dark }) {
                   Rs{" "}
                   {item.discount > 0
                     ? Math.round(
-                        item.price -
-                          (item.price * item.discount) / 100
+                        item.price - (item.price * item.discount) / 100,
                       )
                     : item.price}
                 </p>
@@ -115,7 +102,6 @@ export default function WishListpage({ dark }) {
 
                 {/* Buttons */}
                 <div className="flex gap-2 mt-3">
-
                   <button
                     onClick={() => addToCart(item)}
                     className={`flex-1 text-white py-2 rounded-lg
@@ -141,14 +127,10 @@ export default function WishListpage({ dark }) {
                   >
                     Remove
                   </button>
-
                 </div>
-
               </div>
             </div>
-
           ))}
-
         </div>
       )}
     </div>

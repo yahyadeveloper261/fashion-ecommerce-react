@@ -13,19 +13,13 @@ export default function Orders({ dark }) {
   return (
     <div
       className={`min-h-screen pt-3 px-4 pb-10 rounded-2xl ${
-        dark
-          ? "bg-gray-950 text-white"
-          : "bg-gray-100 text-gray-900"
+        dark ? "bg-gray-950 text-white" : "bg-gray-100 text-gray-900"
       }`}
     >
       <div className="max-w-5xl mx-auto">
-
-        <h1 className="text-3xl font-bold mb-8">
-          My Orders
-        </h1>
+        <h1 className="text-3xl font-bold mb-8">My Orders</h1>
 
         {saveOrders.length === 0 ? (
-
           // Empty Orders
           <div
             className={`rounded-2xl shadow-lg p-10 sm:p-14 text-center ${
@@ -36,17 +30,15 @@ export default function Orders({ dark }) {
               📦
             </div>
 
-            <h2 className="text-2xl font-bold mb-3">
-              No Orders Yet
-            </h2>
+            <h2 className="text-2xl font-bold mb-3">No Orders Yet</h2>
 
             <p
               className={`max-w-md mx-auto ${
                 dark ? "text-gray-200" : "text-gray-500"
               }`}
             >
-              You haven't placed any orders yet.
-              Start shopping and your orders will appear here.
+              You haven't placed any orders yet. Start shopping and your orders
+              will appear here.
             </p>
 
             <button
@@ -60,26 +52,19 @@ export default function Orders({ dark }) {
               Start Shopping
             </button>
           </div>
-
         ) : (
-
           // Orders
           <div className="space-y-5">
-
             {saveOrders.map((order) => (
-
               <div
                 key={order.id}
                 className={`rounded-2xl shadow-lg p-6 ${
                   dark ? "bg-gray-900" : "bg-white"
                 }`}
               >
-
                 <div className="flex justify-between items-center mb-5">
                   <div>
-                    <h2 className="font-bold text-lg">
-                      Order #{order.id}
-                    </h2>
+                    <h2 className="font-bold text-lg">Order #{order.id}</h2>
 
                     <p className="text-sm text-gray-500">
                       Status: {order.status}
@@ -92,9 +77,7 @@ export default function Orders({ dark }) {
                 </div>
 
                 <div className="space-y-3">
-
                   {order.items.map((item, index) => (
-
                     <div
                       key={index}
                       className={`flex justify-between items-center border-b pb-3 ${
@@ -102,9 +85,7 @@ export default function Orders({ dark }) {
                       }`}
                     >
                       <div>
-                        <p className="font-semibold">
-                          {item.name}
-                        </p>
+                        <p className="font-semibold">{item.name}</p>
 
                         <p className="text-sm text-gray-500">
                           Qty: {item.quantity}
@@ -115,19 +96,12 @@ export default function Orders({ dark }) {
                         Rs {item.price * item.quantity}
                       </p>
                     </div>
-
                   ))}
-
                 </div>
-
               </div>
-
             ))}
-
           </div>
-
         )}
-
       </div>
     </div>
   );

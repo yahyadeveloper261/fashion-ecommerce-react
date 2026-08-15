@@ -9,15 +9,11 @@ export default function OrderSuccess({ dark }) {
       className={`min-h-screen flex items-center justify-center px-4 rounded-2xl
       ${dark ? "bg-gray-950" : "bg-gray-100"}`}
     >
-
       <div
         className={`w-full max-w-md rounded-2xl shadow-lg p-8 text-center
         ${dark ? "bg-gray-800 text-white" : "bg-white text-gray-900"}`}
       >
-
-        <div className="text-5xl mb-4">
-          ✅
-        </div>
+        <div className="text-5xl mb-4">✅</div>
 
         <h1
           className={`text-3xl font-bold
@@ -45,7 +41,7 @@ export default function OrderSuccess({ dark }) {
           Continue Shopping
         </button>
 
-<button
+        <button
           onClick={() => navigate("/orders")}
           className={`mt-6 w-full text-white py-3 rounded-lg font-semibold transition duration-300
           ${
@@ -54,7 +50,7 @@ export default function OrderSuccess({ dark }) {
               : "bg-black hover:bg-pink-600"
           }`}
         >
-       View Orders
+          View Orders
         </button>
       </div>
     </div>
