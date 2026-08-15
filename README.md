@@ -4,20 +4,29 @@ A modern and responsive fashion e-commerce website built with **React** and **Ta
 
 ## 🚀 Features
 
-* 🛍️ Product listing and product details
+* 🛍️ Product listing and detailed product pages
 * 👕 Men, Women, Kids & Accessories categories
-* 🔎 Product search
+* 🗂️ Category-wise subcategories such as Dresses, T-Shirts, Jackets, Jeans, Tops, Hoodies, Skirts, Shirts & more
+* 🔎 Product search functionality
 * ↕️ Price and name sorting
-* 📄 Pagination
-* ❤️ Wishlist
+* 📄 Pagination with Previous/Next navigation
+* ❤️ Wishlist functionality
 * 🛒 Shopping cart
-* ➕➖ Cart quantity controls
-* 💳 Checkout page
+* ➕➖ Increase and decrease product quantity
+* 💰 Automatic cart total and grand total calculation
+* 🎨 Product color selection with dynamic product images
+* 🏷️ New Arrivals, Best Sellers & Sale products
+* 💸 Discount and sale price display
+* 📦 Checkout page with customer/order details
 * ✅ Order success page
+* 🔗 Product detail navigation using React Router
 * 🌙 Dark mode
-* 📱 Fully responsive design
-* 💾 LocalStorage for cart and wishlist data
-* 🎨 Modern UI with Tailwind CSS
+* 📱 Fully responsive design for desktop, tablet & mobile
+* 💾 LocalStorage for cart and wishlist persistence
+* ⚡ Fast and modern UI built with Tailwind CSS
+* 🧩 Reusable React components
+* 🔄 Context API for shared cart, wishlist and search state
+
 
 ## 🛠️ Technologies
 
